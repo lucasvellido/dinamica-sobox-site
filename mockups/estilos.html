@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Só Box — Direções de estilo</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, "Segoe UI", Roboto, sans-serif; background:#eceff1; color:#222; padding:32px; }
+  h1 { font-size:24px; margin-bottom:6px; }
+  .sub { color:#666; margin-bottom:28px; font-size:15px; }
+  .grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:24px; }
+  @media (max-width: 980px){ .grid{ grid-template-columns:1fr; } }
+  .col h2 { font-size:15px; text-transform:uppercase; letter-spacing:1px; margin-bottom:4px; }
+  .col .desc { font-size:13px; color:#555; margin-bottom:12px; min-height:48px; }
+
+  /* mini browser frame */
+  .frame { border-radius:10px; overflow:hidden; box-shadow:0 8px 24px rgba(0,0,0,.15); background:#fff; }
+  .frame .hero { height:200px; display:flex; flex-direction:column; justify-content:flex-end; padding:18px; position:relative; }
+  .frame .nav { position:absolute; top:0; left:0; right:0; height:42px; display:flex; align-items:center; padding:0 16px; gap:16px; font-size:11px; }
+  .frame .nav .logo { font-weight:800; }
+  .frame .nav .links { margin-left:auto; display:flex; gap:12px; opacity:.85; }
+  .frame .htitle { font-size:22px; font-weight:800; line-height:1.1; }
+  .frame .hsub { font-size:12px; margin-top:6px; opacity:.9; }
+  .frame .cta { display:inline-block; margin-top:10px; padding:7px 14px; border-radius:6px; font-size:11px; font-weight:700; width:fit-content; }
+  .frame .body { padding:16px; }
+  .frame .cards { display:flex; gap:8px; }
+  .frame .card { flex:1; height:54px; border-radius:6px; }
+  .swatches { display:flex; gap:6px; margin-top:14px; }
+  .swatch { width:28px; height:28px; border-radius:50%; border:2px solid #fff; box-shadow:0 1px 3px rgba(0,0,0,.2); }
+
+  /* A — Industrial Clean */
+  .a .hero { background:linear-gradient(120deg,#37474f,#546e7a); color:#fff; }
+  .a .nav { color:#fff; }
+  .a .cta { background:#ff7043; color:#fff; }
+  .a .card { background:#cfd8dc; }
+  .a .body { background:#fff; }
+
+  /* B — Premium Escuro */
+  .b .hero { background:#1a1a1a; color:#fff; }
+  .b .nav { color:#e0c089; }
+  .b .htitle { font-family:Georgia, serif; }
+  .b .cta { background:#c9a24b; color:#1a1a1a; }
+  .b .card { background:#2b2b2b; }
+  .b .body { background:#141414; }
+  .b { color:#fff; }
+  .b .desc, .b h2 { color:inherit; }
+
+  /* C — Moderno Claro */
+  .c .hero { background:linear-gradient(120deg,#e3f2fd,#bbdefb); color:#0d47a1; }
+  .c .nav { color:#0d47a1; }
+  .c .cta { background:#1976d2; color:#fff; }
+  .c .card { background:#e3f2fd; }
+  .c .body { background:#fff; }
+
+  .note { margin-top:32px; font-size:13px; color:#555; background:#fff; padding:16px; border-radius:8px; border-left:4px solid #ff7043; }
+</style>
+</head>
+<body>
+  <h1>Só Box — 3 direções de estilo</h1>
+  <p class="sub">Compare a sensação de cada uma. Me diga no terminal qual prefere (A, B ou C) — ou misture ideias.</p>
+
+  <div class="grid">
+    <!-- A -->
+    <div class="col a">
+      <h2>A · Industrial Clean</h2>
+      <p class="desc">Cinza-metálico, tom técnico e confiável. Destaque laranja para os botões. Sensação de "oficina séria e moderna".</p>
+      <div class="frame">
+        <div class="hero">
+          <div class="nav"><span class="logo">SÓ BOX</span><span class="links">Início · Produtos · Contato</span></div>
+          <div class="htitle">Esquadrias de alumínio sob medida</div>
+          <div class="hsub">Campinas e região · +15 anos</div>
+          <span class="cta">Pedir orçamento</span>
+        </div>
+        <div class="body"><div class="cards"><div class="card"></div><div class="card"></div><div class="card"></div></div></div>
+      </div>
+      <div class="swatches"><span class="swatch" style="background:#37474f"></span><span class="swatch" style="background:#546e7a"></span><span class="swatch" style="background:#ff7043"></span><span class="swatch" style="background:#cfd8dc"></span></div>
+    </div>
+
+    <!-- B -->
+    <div class="col b" style="border-radius:10px; padding:14px; background:#0f0f0f;">
+      <h2>B · Premium Escuro</h2>
+      <p class="desc">Fundo escuro com dourado/bronze. Ar sofisticado, "alto padrão". Bom se mira em obras e clientes premium.</p>
+      <div class="frame">
+        <div class="hero">
+          <div class="nav"><span class="logo">SÓ BOX</span><span class="links">Início · Produtos · Contato</span></div>
+          <div class="htitle">Alumínio com acabamento de alto padrão</div>
+          <div class="hsub">Campinas e região</div>
+          <span class="cta">Solicitar orçamento</span>
+        </div>
+        <div class="body"><div class="cards"><div class="card"></div><div class="card"></div><div class="card"></div></div></div>
+      </div>
+      <div class="swatches"><span class="swatch" style="background:#1a1a1a"></span><span class="swatch" style="background:#c9a24b"></span><span class="swatch" style="background:#e0c089"></span><span class="swatch" style="background:#2b2b2b"></span></div>
+    </div>
+
+    <!-- C -->
+    <div class="col c">
+      <h2>C · Moderno Claro</h2>
+      <p class="desc">Azul + branco, leve e amigável. Transmite limpeza e confiança, fácil de ler. Visual mais "popular/acessível".</p>
+      <div class="frame">
+        <div class="hero">
+          <div class="nav"><span class="logo">SÓ BOX</span><span class="links">Início · Produtos · Contato</span></div>
+          <div class="htitle">Janelas, portas e box em alumínio</div>
+          <div class="hsub">Campinas e região</div>
+          <span class="cta">Pedir orçamento</span>
+        </div>
+        <div class="body"><div class="cards"><div class="card"></div><div class="card"></div><div class="card"></div></div></div>
+      </div>
+      <div class="swatches"><span class="swatch" style="background:#0d47a1"></span><span class="swatch" style="background:#1976d2"></span><span class="swatch" style="background:#bbdefb"></span><span class="swatch" style="background:#e3f2fd"></span></div>
+    </div>
+  </div>
+
+  <div class="note">
+    <strong>Como abrir:</strong> dê dois cliques no arquivo <code>mockups/estilos.html</code> (ou arraste para o navegador). Essas são só amostras de cor e clima — o layout final terá as fotos reais.
+  </div>
+</body>
+</html>
