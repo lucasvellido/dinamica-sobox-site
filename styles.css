@@ -33,3 +33,50 @@ a { color: inherit; text-decoration: none; }
 .titulo-secao { font-size: 30px; font-weight: 800; margin-bottom: 12px; color: var(--azul); }
 .subtitulo-secao { color: var(--texto-claro); margin-bottom: 40px; max-width: 640px; }
 .text-center { text-align: center; }
+
+/* ===== Botões ===== */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  border: none;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.btn--laranja { background: var(--laranja); color: #fff; }
+.btn--laranja:hover { background: var(--laranja-escuro); transform: translateY(-2px); box-shadow: 0 6px 16px rgba(244,81,30,.4); }
+.btn--branco { background: #fff; color: var(--azul); }
+.btn--branco:hover { transform: translateY(-2px); box-shadow: var(--sombra); }
+
+/* ===== Cabeçalho fixo ===== */
+.header {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(255,255,255,.97);
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+  backdrop-filter: blur(6px);
+}
+.header .container { display: flex; align-items: center; height: 68px; }
+.logo { font-size: 22px; font-weight: 800; letter-spacing: 1px; color: var(--azul); }
+.logo span { color: var(--laranja); }
+.nav { margin-left: auto; display: flex; align-items: center; gap: 28px; }
+.nav a { font-weight: 600; color: var(--texto); transition: color .2s; }
+.nav a:hover, .nav a.ativo { color: var(--laranja); }
+.nav .btn { padding: 9px 18px; font-size: 14px; }
+.menu-toggle { display: none; background: none; border: none; font-size: 26px; cursor: pointer; color: var(--azul); margin-left: auto; }
+
+/* ===== Rodapé ===== */
+.footer { background: var(--azul); color: #cfd8dc; padding: 48px 0 24px; }
+.footer .grid { display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between; }
+.footer h4 { color: #fff; margin-bottom: 12px; font-size: 17px; }
+.footer a:hover { color: var(--laranja); }
+.footer .copyright { border-top: 1px solid rgba(255,255,255,.15); margin-top: 32px; padding-top: 18px; font-size: 13px; text-align: center; }
+
+/* ===== Responsivo ===== */
+@media (max-width: 760px) {
+  .nav { display: none; position: absolute; top: 68px; left: 0; right: 0; flex-direction: column; background: #fff; padding: 18px 20px; gap: 16px; box-shadow: var(--sombra); }
+  .nav.aberto { display: flex; }
+  .menu-toggle { display: block; }
+  .titulo-secao { font-size: 24px; }
+}
